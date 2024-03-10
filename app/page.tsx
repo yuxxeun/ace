@@ -1,14 +1,32 @@
 "use client"
-import { NextPage } from "next";
-import React from "react";
-import { useUserIp } from '../utils/useUserIp'
+import { useEffect, useState } from 'react';
 
-const HomePage: NextPage = () => {
-  const ip = useUserIp();
+const Page = () => {
+  const [location, setLocation] = useState<string>('');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/route');
+        if (response.ok) {
+          const data = await response.text();
+          setLocation(data);
+        } else {
+          throw new Error('Failed to fetch location');
+        }
+      } catch (error) {
+        console.error('Error fetching location:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <div className="container">
-      <p>Your ip: {ip}</p>
+    <div>
+      <h1>Your location is {location}</h1>
     </div>
   );
 };
-export default HomePage;
+
+export default Page;
