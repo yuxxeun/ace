@@ -23,8 +23,8 @@ export const EvervaultCard = ({
 
   function onMouseMove({ currentTarget, clientX, clientY }: any) {
     let { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
+    mouseX.set(clientX - left); 
+    mouseY.set(clientY - top); 
 
     const str = generateRandomString(1500);
     setRandomString(str);

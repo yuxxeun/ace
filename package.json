@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@studio-freight/react-lenis": "^0.0.45",
+    "browser-cookies": "^1.2.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.8",
     "geist": "^1.2.2",
