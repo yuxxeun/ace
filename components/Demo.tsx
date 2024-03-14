@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 
-interface location {
+interface LocationData {
     ip: string;
     country: string; 
     region: string;
@@ -10,7 +10,7 @@ interface location {
 }
 
 const Demo = () => {
-    const [location, setLocation] = useState<Location | null>(null);
+    const [location, setLocation] = useState<LocationData | null>(null);
 
     useEffect(() => {
         const fetchLocation = async () => {
